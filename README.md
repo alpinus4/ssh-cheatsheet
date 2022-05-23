@@ -2,8 +2,49 @@
 
 ## Konfiguracja serwera
 
+Pierwszym krokiem będzie zainstalowanie serwera SSH. 
+
+RHEL/Fedora: 
+```bash
+dnf install openssh-server
+```
+
+Ubuntu:
+```bash
+apt install openssh-server
+```
+
+Na Windowsie należy wejść w **Ustawienia**, wybrać **Aplikacje > Aplikacje i funkcje**, a następnie  **Funkcje opcjonalne**.
+Następnie wybierz opcję **Dodaj funkcję**, wtedy znajdź **OpenSSH Server** i kliknij **Zainstaluj**.
+
+Kolejnym krokiem będzie uruchomienie serwera i skonfigurowanie tak, aby uruchamiał się wraz ze startem systemu.
+Na Linuxie wystarczą komendy:
+```bash
+systemctl start openssh-server
+systemctl enable openssh-server
+```
+
+W przypadku korzystania z Windowsa uruchom **Menedżera zadań**, rozwiń **Usługi**, i kliknij **Otwórz usługi**. Następnie znajdź **OpenSSH Server**, kliknij prawym przyciskiem myszy, i wybierz **Właściwości**.
+Typ uruchomienia należy zmienić na **Automatyczny**.
+
+Więcej informacji:
+https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
 
 ## Generowanie kluczy
+### Polecenie ssh-keygen
+Do wygenerowania kluczy można skorzystać z polecenia:
+```bash
+ssh-keygen
+```
+wybierając wartości domyślne poprzez wciskanie klawisza Enter.
+
+Wygenerowana para kluczy zostanie umieszczony w katalogu `.ssh` w folderze użytkownika, pod nazwami 
+```bash
+id_rsa
+id_rsa.pub
+```
+gdzie plik z roszerzeniem `.pub` jest kluczem publicznym.
+
 ### PuTTY
 1. Otwórz program PuTTYgen
 2. Kliknij przycisk 'generate'
@@ -11,7 +52,6 @@
 4. Kliknij przycisk 'Save public key', wybierz nazwę i lokalizację pliku, żeby zapisać klucz publiczny
 5. Kliknij przycisk 'Save private key', wybierz passphrase* oraz nazwę i lokalizację pliku, żeby zapisać klucz prywatny
 *passphrase jest polem opcjonalnym zapewniającym większe bezpieczneństwo klucza prywatnego poprzez szyfrowanie, ale wymaga podania przy każdym jego użyciu
-
 
 ## Instalacja kluczy dla wybranych klientów usług ssh
 #### Instalacja klucza publicznego

@@ -42,3 +42,22 @@ scp <user>@<ip_serwera>:/home/<user>/<ścieżka/nazwa_pobieranego_pliku> <ście�
 
 Dlaczego warto przeprowadzić bezpieczny transfer plików przez scp?
 SCP do transferu danych używa SSH. W przeciwieństwie do np. FTP, SCP szyfruje połączenie, dzięki czemu jeśli ktoś będzie podsłuchiwał połączenie, nie będzie w stanie odczytać przechwyconych danych.
+  
+## Ciekawostki
+  Jak zdjąć hasło z klucza?
+  
+  Wystarczy użyć polecenia:
+  ssh-keygen -p
+  
+  Następnie należy podać hasło do klucza, a nowe hasło zostawić puste.
+  
+  Jak to wygląda w konsoli:
+  
+  C:\Users\vip>ssh-keygen -p
+  Enter file in which the key is (C:\Users\<user>/.ssh/id_rsa):
+  Enter old passphrase:
+  Key has comment '<user>@DESKTOP-17P39QL'
+  Enter new passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved with the new passphrase.
+  

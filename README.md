@@ -1,15 +1,15 @@
 # Uwierzytelnianie klienta SSH za pomocą kluczy prywatnych
 
-### Konfiguracja serwera
+## Konfiguracja serwera
 
 
-### Generowanie kluczy
+## Generowanie kluczy
 
 
-### Instalacja kluczy dla wybranych klientów usług ssh
+## Instalacja kluczy dla wybranych klientów usług ssh
 
 
-### Bezpieczny transfer plików z wykorzystaniem ssh
+## Bezpieczny transfer plików z wykorzystaniem ssh
 Wysłanie pliku:
 scp -i C:\Users\vip\.ssh\id_rsa .\plik2.txt user@192.168.205.137:/home/user/przeslany2.txt
 

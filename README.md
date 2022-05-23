@@ -28,16 +28,16 @@ Składnia polecenia:
 scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2
 
 Bezpieczne przesłanie pliku z hosta na serwer:
-scp -i C:\Users\<winuser>\.ssh\id_rsa .\plik2.txt <user>@<ip_serwera>:/home/<user>/przeslany2.txt
+scp -i C:\Users\<winuser>\.ssh\id_rsa <ścieżka/nazwa_wysyłanego pliku> <user>@<ip_serwera>:/home/<user>/<nazwa_przeslanego_pliku>
 
 lub jeśli klucz został wygenerowany w domyślnym katalogu:
-scp .\plik2.txt <user>@<ip_serwera>:/home/<user>/przeslany2.txt
+scp <ścieżka/nazwa_wysyłanego pliku> <user>@<ip_serwera>:/home/<user>/<nazwa_przeslanego_pliku>
 
 Bezpieczne pobranie pliku z serwera:
-scp -i C:\Users\<winuser>\.ssh\id_rsa <user>@<ip_serwera>:/home/<user>/test.txt test.txt
+scp -i C:\Users\<winuser>\.ssh\id_rsa <user>@<ip_serwera>:/home/<user>/<ścieżka/nazwa_pobieranego_pliku> <ścieżka/nazwa_pobranego_pliku>
 
 lub jeśli klucz został wygenerowany w domyślnym katalogu:
-scp <user>@<ip_serwera>:/home/<user>/test.txt test.txt
+scp <user>@<ip_serwera>:/home/<user>/<ścieżka/nazwa_pobieranego_pliku> <ścieżka/nazwa_pobranego_pliku>
 
 Dlaczego warto przeprowadzić bezpieczny transfer plików przez scp?
 SCP do transferu danych używa SSH. W przeciwieństwie do np. FTP, SCP szyfruje połączenie, dzięki czemu jeśli ktoś będzie podsłuchiwał połączenie, nie będzie w stanie odczytać przechwyconych danych.

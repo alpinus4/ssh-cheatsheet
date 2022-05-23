@@ -1,15 +1,16 @@
 # Uwierzytelnianie klienta SSH za pomocą kluczy prywatnych
 
-### Konfiguracja serwera
+## Konfiguracja serwera
 
 
-### Generowanie kluczy
+## Generowanie kluczy
 
 
-### Instalacja kluczy dla wybranych klientów usług ssh
+## Instalacja kluczy dla wybranych klientów usług ssh
 
 
-### Bezpieczny transfer plików z wykorzystaniem ssh
+
+## Bezpieczny transfer plików z wykorzystaniem ssh
 
 Krok 1: Wygenerowanie klucza na Windowsie:
 ssh-keygen -t rsa -b 4096

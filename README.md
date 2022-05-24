@@ -48,14 +48,26 @@ gdzie plik z roszerzeniem `.pub` jest kluczem publicznym.
 ### PuTTY
 1. Otwórz program PuTTYgen
 2. Kliknij przycisk 'generate'
+
+![generowanie-kluczy-putty-1](images/generowanie-kluczy-putty-1.png)
+
 3. Poruszaj kursorem myszki nad pustym obszarem podpisanym 'Key' w celu wygenerowania pary kluczy
-4. Kliknij przycisk 'Save public key', wybierz nazwę i lokalizację pliku, żeby zapisać klucz publiczny
+
+![generowanie-kluczy-putty-2](images/generowanie-kluczy-putty-2.png)
+
+4. Kliknij przycisk 'Save public key', wybierz nazwę i lokalizację pliku, żeby zapisać klucz publiczny lub skopiuj zawartość pola 'Public key for pasting into OpenSSH authorized_keys file'
+
+![generowanie-kluczy-putty-3](images/generowanie-kluczy-putty-3.png)
+
 5. Kliknij przycisk 'Save private key', wybierz passphrase* oraz nazwę i lokalizację pliku, żeby zapisać klucz prywatny
+
+![generowanie-kluczy-putty-4](images/generowanie-kluczy-putty-4.png)
+
 *passphrase jest polem opcjonalnym zapewniającym większe bezpieczneństwo klucza prywatnego poprzez szyfrowanie, ale wymaga podania przy każdym jego użyciu
 
 ## Instalacja kluczy dla wybranych klientów usług ssh
 #### Instalacja klucza publicznego
-1. Sprawdź czy na serwerze z którym chcesz się połączyć w katalogu home znajduje się ukryty katalog '.ssh' z plikiem 'authorized_key' w środku. Jeśli tak, postępuj dalej.
+1. Sprawdź, czy na serwerze, z którym chcesz się połączyć, w katalogu home znajduje się ukryty katalog '.ssh' z plikiem 'authorized_key' w środku. Jeśli tak, postępuj dalej.
 
 W przeciwnym wypadku wykonaj w katalogu home:
 ```
@@ -69,15 +81,27 @@ touch authorized_keys
 Klucz publiczny można przekopiować do środka authorized_keys na kilka sposobów:
 1. Ręcznie wprowadzając klucz do pliku
 2. Korzystając z komendy scp od strony użytkownika przekopiowując cały plik na stronę serwera
-3. Korzystając z komendy ssh-copy-id na systemie Linux
-4. Korzystając ze [skryptu-substytutu dla ssh-copy-id](https://gist.github.com/ceilfors/fb6908dc8ac96e8fc983) na systemie Windows
+3. Korzystając z komendy 'ssh-copy-id' na systemie Linux
+4. Korzystając ze [skryptu-substytutu dla 'ssh-copy-id'](https://gist.github.com/ceilfors/fb6908dc8ac96e8fc983) na systemie Windows
 #### Instalacja klucza prywatnego
 ##### PuTTY
 1. Otwórz program PuTTY
-2. Z menu po lewej stronie wybierz Connection>SSH>Auth
+2. Z menu po lewej stronie wybierz 'Connection>SSH>Auth'
+
+![instalacja-kluczy-putty-1](images/instalacja-kluczy-putty-1.png)
+
 3. Obok pustego pola 'Private key file for authentication' kliknij przycisk 'Browse' i wybierz klucz prywatny
-4. W pole 'Host Name (or IP address)' wpisz adres IP serwera z jakim chcesz się połączyć
-5. Kliknij przycisk 'Open'
+
+![instalacja-kluczy-putty-2](images/instalacja-kluczy-putty-2.png)
+
+4. Z menu po lewej stronie wybierz 'Session'
+
+![instalacja-kluczy-putty-3](images/instalacja-kluczy-putty-3.png)
+
+5. W pole 'Host Name (or IP address)' wpisz nazwę lub adres IP serwera z jakim chcesz się połączyć i kliknij przycisk 'Open'
+
+![instalacja-kluczy-putty-4](images/instalacja-kluczy-putty-4.png)
+
 ##### Windows SSH
 Klucz prywatny zlokalizowany w domyślnym katalogu:
 ```
@@ -87,6 +111,8 @@ Klucz prywatny lokalizowany w innym katalogu:
 ```
 ssh -i <lokalizacja klucza> user@host
 ```
+Gdzie:
+
 user - nazwa użytkownika z jakim się łączymy
 
 host - adres IP serwera z jakim się łączymy
